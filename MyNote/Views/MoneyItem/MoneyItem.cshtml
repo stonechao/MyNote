@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MyNote.Models.ViewModels.MoneyItemViewModel>
+
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>
+            #
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoteType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoteAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoteDate)
+        </th>
+
+    </tr>
+
+
+@{
+    int my_index = 0;
+    foreach (var item in Model) {
+        my_index++;
+    <tr>
+        <td>
+            @my_index
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoteType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoteAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoteDate)
+        </td>
+
+    </tr>
+    }
+}
+</table>
