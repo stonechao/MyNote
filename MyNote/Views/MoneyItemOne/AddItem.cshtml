@@ -17,16 +17,18 @@
             </div>
         </div>
 
+        @* //exchaneg NoteDate and NoteAmount here, since I make worng Display name in ViewModel *@
         <div class="form-group">
-            @Html.LabelFor(model => model.NoteAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.NoteDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NoteAmount, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.NoteAmount, "", new { @class = "text-danger" })
             </div>
         </div>
 
+        @* //exchaneg NoteDate and NoteAmount here, since I make worng Display name in ViewModel *@
         <div class="form-group">
-            @Html.LabelFor(model => model.NoteDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.NoteAmount, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NoteDate, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.NoteDate, "", new { @class = "text-danger" })
