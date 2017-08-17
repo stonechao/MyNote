@@ -10,12 +10,18 @@ namespace MyNote.Controllers
 {
     public class HomeController : Controller
     {
-        private Model1 db = new Model1();
+
+        private readonly MoneyItemService _my_monyservice;
+
+        public HomeController()
+        {
+            _my_monyservice = new MoneyItemService();
+        }
 
         public ActionResult Index()
         {
 
-            IEnumerable<AccountBook> my_account_list = db.AccountBook.ToList();
+            IEnumerable<AccountBook> my_account_list = _my_monyservice.Lookup(); //db.AccountBook.ToList();
             var my_money_list = new List<MoneyItemViewModel>();
 
 
