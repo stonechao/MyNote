@@ -4,39 +4,33 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MyNote.Models.ViewModels;
+using MyNote.Models;
 
 namespace MyNote.Controllers
 {
     public class HomeController : Controller
     {
+        private Model1 db = new Model1();
+
         public ActionResult Index()
         {
 
-            var my_money_list = new List<MoneyItemViewModel>()
-            {
-                new MoneyItemViewModel()
-                {
-                    NoteType=1,
-                    NoteAmount=300,
-                    NoteDate= DateTime.Parse("2017/01/02"),
-                },
+            IEnumerable<AccountBook> my_account_list = db.AccountBook.ToList();
+            var my_money_list = new List<MoneyItemViewModel>();
 
-                new MoneyItemViewModel()
+
+                foreach ( var my_account_item in my_account_list)
                 {
-                    NoteType=1,
-                    NoteAmount=1800,
-                    NoteDate= DateTime.Parse("2017/01/03"),
-                },
-                new MoneyItemViewModel()
-                {
-                    NoteType=1,
-                    NoteAmount=800,
-                    NoteDate= DateTime.Parse("2017/01/04"),
+                    my_money_list.Add(
+                    new MoneyItemViewModel()
+                    {
+                        NoteType = my_account_item.Categoryyy,
+                        NoteAmount = my_account_item.Amounttt,
+                        NoteDate = my_account_item.Dateee
+                    });
                 }
-            };
-
+                
             return View(my_money_list);
-
            
         }
 
