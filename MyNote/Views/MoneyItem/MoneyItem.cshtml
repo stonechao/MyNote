@@ -7,7 +7,7 @@
             #
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NoteType )
+            @Html.DisplayNameFor(model => model.NoteType)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.NoteDate)  @* //exchaneg NoteDate and NoteAmount here, since I make worng Display name in ViewModel *@
@@ -29,7 +29,7 @@
 
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.NoteType )
+           @(item.NoteType==0?"支出":"收入")
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.NoteAmount, null, "金額")
